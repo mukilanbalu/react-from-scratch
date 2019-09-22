@@ -1,10 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
+import Signin from "./views/signIn/signIn.js";
 
-class App extends Component{
-        render(){
-            return(
-                <h2>Test</h2>
+function App (){           
+     return(
+            <Signin/>
             )
-        }
 }
+
 export default App;
+
