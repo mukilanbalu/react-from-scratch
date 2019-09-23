@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form, Card, Button } from "react-bootstrap";
 import "./signin.scss"
-function Signin() {
-  return (
+const  Signin =()=> (
     <Container fluid className="h-full">
       <Row className="h-100 justify-content-center">
         <Col xs="5" className="align-self-center" >
@@ -35,6 +34,5 @@ function Signin() {
       </Row>
     </Container>
   );
-}
 
 export default Signin;

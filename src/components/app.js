@@ -1,10 +1,10 @@
 import React from "react";
-import Signin from "./views/signIn/signIn.js";
+import Routes from "../router/mainRouter"
 
-function App (){           
+const  App= ()=>{           
      return(
-            <Signin/>
-            )
+              <Routes/>
+            );
 }
 
 export default App;
