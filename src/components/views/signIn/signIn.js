@@ -1,7 +1,11 @@
 import React from "react";
 import { Container, Row, Col, Form, Card, Button } from "react-bootstrap";
 import "./signin.scss"
-const  Signin =()=> (
+const  Signin =()=> {
+  const submit = ()=>{
+props.historty.push("/home");
+}
+  return (
     <Container fluid className="h-full">
       <Row className="h-100 justify-content-center">
         <Col xs="5" className="align-self-center" >
@@ -24,7 +28,7 @@ const  Signin =()=> (
                   <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                   </Form.Group>
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" onClick={signin}>
                     Submit
                   </Button>
                 </Form>
@@ -33,6 +37,7 @@ const  Signin =()=> (
         </Col>
       </Row>
     </Container>
-  );
+  )
+}
 
 export default Signin;
