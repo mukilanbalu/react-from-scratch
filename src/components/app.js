@@ -1,9 +1,9 @@
 import React from "react";
 import Routes from "../router/mainRouter"
 
-const  App= ()=>{           
+const  App= (props)=>{           
      return(
-              <Routes/>
+              <Routes history={props.history}/>
             );
 }
 

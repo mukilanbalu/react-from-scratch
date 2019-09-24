@@ -8,7 +8,7 @@ function PrivateRoute({component : Component , ...rest}){
 return (
     <Route 
     {...rest} 
-    render = { ()=> (isAuthenticated() === true ? <Component {...props} /> : <Redirect to="/signin" />) }
+    render = { (props)=> (isAuthenticated() === true ? <Component {...props} /> : <Redirect to="/signin" />) }
     />
 )
 }
@@ -17,15 +17,15 @@ function PublicRoute({component : Component,authSuccessUrl, ...rest}){
         <Route 
         exact
         {...rest} 
-        render = { ()=> (isAuthenticated() === true ? <Redirect {...rest}  to={authSuccessUrl} /> : <Component {...props} /> ) }
+        render = { (props)=> (isAuthenticated() === true ? <Redirect {...rest}  to={authSuccessUrl} /> : <Component {...props}  /> ) }
         />
     )
     }
 const Routes = ()=>(
     <Switch>
-        <PublicRoute exact path="/" component={()=><Signin/>} />
-        <PublicRoute exact path="/signin" component={()=><Signin/>}/>
-        <PrivateRoute exact path="/home" component={()=><Home/>}/> 
+        <PublicRoute exact path="/" component={(props)=><Signin {...props} />} authSuccessUrl="/signin" />
+        <PublicRoute exact path="/signin" component={(props)=><Signin {...props }/>} authSuccessUrl="/signin"/>
+        <PrivateRoute exact path="/home" component={(props)=><Home {...props} />}/> 
     </Switch>
 )
 

@@ -1,5 +1,10 @@
 function isAuthenticated() {
-      return true;
+   let auth = localStorage.getItem("auth")
+      if(auth){
+          return true
+      }else{
+          return false
+      }
    
   }
 
