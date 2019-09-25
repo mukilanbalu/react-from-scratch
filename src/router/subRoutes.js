@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, Switch, Redirect} from "react-router-dom";
-import Signin from "../components/views/signIn/signIn";
-import Home from "../components/views/home/home"
+import SubRoute from "../components/SubRoute/SubRoute.js";
 import isAuthenticated  from "../utils/auth";
 
 function PrivateRoute({component : Component , ...rest}){
@@ -21,12 +20,10 @@ function PublicRoute({component : Component,authSuccessUrl, ...rest}){
         />
     )
     }
-const Routes = () =>(
+const SRoutes = () =>(
     <Switch>
-        <PublicRoute exact path="/" component={(props)=><Signin {...props} />} authSuccessUrl="/signin" />
-        <PublicRoute exact path="/signin" component={(props)=><Signin {...props }/>} authSuccessUrl="/signin"/>
-        <PrivateRoute exact path="/home" component={(props)=><Home {...props} />}/> 
+        <PrivateRoute path="/sub" component={(props)=><SubRoute {...props} />}/> 
     </Switch>
 )
 
-export default Routes;
+export default SRoutes;

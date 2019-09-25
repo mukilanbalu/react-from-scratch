@@ -30,20 +30,16 @@ const  Signin =(props)=> {
           <Card className="signin-card" >
             <Card.Body>
               <Card.Title>Sign In</Card.Title>
-                <Form>
+                <Form onSubmit={submit}>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>User Name</Form.Label>
                     <Form.Control type="text" placeholder="User Name" name="userName"  onChange={handleChange}/>
                   </Form.Group>
-
                   <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" name="password"  onChange={handleChange}  />
                   </Form.Group>
-                  <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                  </Form.Group>
-                  <Button variant="primary" type="submit" onClick={submit}>
+                  <Button variant="primary" type="submit" >
                     Submit
                   </Button>
                 </Form>

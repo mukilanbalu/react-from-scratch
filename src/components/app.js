@@ -3,7 +3,7 @@ import Routes from "../router/mainRouter"
 
 const  App= (props)=>{           
      return(
-              <Routes history={props.history}/>
+              <Routes />
             );
 }
 
